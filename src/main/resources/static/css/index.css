@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+ 
+*{  
+    text-decoration: none;
+    background-color: #cccccc;
+    font-family: "맑은 고딕";
+    margin:0;
+    
+}
+
+#total{
+    float:left;
+    width: 30%;
+    height: 300px;
+    text-align: center;
+    background-color: #fff;
+    margin-top:0;
+}
+
+#fc{
+    float:left;
+    width: 30%;
+    height: 300px;
+    text-align: center;
+    background-color: #fff;
+    margin-top:0;
+
+}
+#vc{
+    float:left;
+    width: 30%;
+    height: 300px;
+    text-align: center;
+    background-color: #fff;
+    margin-top:0;
+
+}
+
+#Analize{
+    float:left;
+    width: 57%;
+    height: 200px;
+    text-align: center;
+    background-color: #fff;
+}
+
+#pre{
+    float:right;
+    width:31%;
+    height:400px;
+    text-align: center;
+    background-color: #fff;
+    padding: 0;
+    margin-right:11%;
+    margin-top:-6.5%;
+
+}
+#cheatbot{
+    float:left;
+    width: 57%;
+    height: 200px;
+    text-align: center;
+    background-color: #fff;
+    margin-bottom: 0;
+
+}
+
+.sidebar{
+	border:red solid 0.1px;
+	float:right;
+	display:absolute;
+	width:5%;
+	height:50%;
+	margin-left:1%;
+	margin-top: 10%;
+	
+} 

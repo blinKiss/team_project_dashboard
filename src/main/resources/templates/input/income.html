@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+	<h1>안녕 난 수입이야</h1>
+	<!-- 초기 입력 폼 -->
+	<div id="input-form">
+		<div class="form-row">
+			<div class="form-col">
+				<label for="income-name">수입:</label> <input type="text"
+					id="income-name" name="incomeName">
+			</div>
+			<div class="form-col">
+				<label for="amount">금액:</label> <input type="number" id="amount"
+					name="amount">
+			</div>
+		</div>
+		<div class="form-actions">
+			<button type="submit">입력완료</button>
+			<button id="add-income">추가하기</button>
+		</div>
+	</div>
+
+	<!-- 입력된 수입 정보 테이블 -->
+	<table id="income-table">
+		<thead>
+			<tr>
+				<th>수입</th>
+				<th>입력</th>
+			</tr>
+		</thead>
+		<tbody id="income-list">
+			<!-- 입력된 수입 정보가 여기에 추가될 것입니다. -->
+		</tbody>
+	</table>
+
+
+
+
+	<script>
+	// 입력완료 버튼 클릭 이벤트 처리
+	document.querySelector("#input-form button[type='submit']").addEventListener("click", function(event) {
+	  event.preventDefault(); // 폼 제출 기본 동작 방지
+
+	  // 입력된 수입 정보 가져오기
+	  var incomeName = document.getElementById("income-name").value;
+	  var amount = document.getElementById("amount").value;
+
+	  // 새로운 입력 폼 생성
+	  var newForm = document.createElement("div");
+	  newForm.classList.add("form-row");
+
+	  var formCol1 = document.createElement("div");
+	  formCol1.classList.add("form-col");
+	  formCol1.textContent = incomeName;
+
+	  var formCol2 = document.createElement("div");
+	  formCol2.classList.add("form-col");
+	  formCol2.textContent = amount;
+
+	  var formActions = document.createElement("div");
+	  formActions.classList.add("form-actions");
+
+	  var editButton = document.createElement("button");
+	  editButton.classList.add("edit-income");
+	  editButton.textContent = "수정하기";
+	  formActions.appendChild(editButton);
+
+	  var deleteButton = document.createElement("button");
+	  deleteButton.classList.add("delete-income");
+	  deleteButton.textContent = "삭제하기";
+	  formActions.appendChild(deleteButton);
+
+	  newForm.appendChild(formCol1);
+	  newForm.appendChild(formCol2);
+	  newForm.appendChild(formActions);
+
+	  // 입력된 수입 정보를 추가
+	  var incomeList = document.getElementById("income-list");
+	  incomeList.appendChild(newForm);
+
+	  // 입력된 수입 정보를 초기화
+	  document.getElementById("income-name").value = "";
+	  document.getElementById("amount").value = "";
+	});
+
+	// 추가하기 버튼 클릭 이벤트 처리
+	document.getElementById("add-income").addEventListener("click", function() {
+	  // 새로운 입력 폼 생성
+	  var newForm = document.createElement("div");
+	  newForm.classList.add("form-row");
+
+	  var formCol1 = document.createElement("div");
+	  formCol1.classList.add("form-col");
+
+	  var formCol2 = document.createElement("div");
+	  formCol2.classList.add("form-col");
+
+	  var formActions = document.createElement("div");
+	  formActions.classList.add("form-actions");
+
+	  var incomeLabel = document.createElement("label");
+	  incomeLabel.htmlFor = "income-name";
+	  incomeLabel.textContent = "수입:";
+	  formCol1.appendChild(incomeLabel);
+
+	  var incomeInput = document.createElement("input");
+	  incomeInput.type = "text";
+	  incomeInput.id = "income-name";
+	  incomeInput.name = "incomeName";
+	  formCol1.appendChild(incomeInput);
+
+	  var amountLabel = document.createElement("label");
+	  amountLabel.htmlFor = "amount";
+	  amountLabel.textContent = "금액:";
+	  formCol2.appendChild(amountLabel);
+
+	  var amountInput = document.createElement("input");
+	  amountInput.type = "number";
+	  amountInput.id = "amount";
+	  amountInput.name = "amount";
+	  formCol2.appendChild(amountInput);
+
+	  var addButton = document.createElement("button");
+	  addButton.classList.add("add-income");
+	  addButton.textContent = "입력완료";
+	  formActions.appendChild(addButton);
+
+	  var deleteButton = document.createElement("button");
+	  deleteButton.classList.add("delete-income");
+	  deleteButton.textContent = "추가하기";
+	  formActions.appendChild(deleteButton);
+
+	  newForm.appendChild(formCol1);
+	  newForm.appendChild(formCol2);
+	  newForm.appendChild(formActions);
+
+	  // 추가된 입력 폼을 income-list에 추가
+	  var incomeList = document.getElementById("income-list");
+	  incomeList.appendChild(newForm);
+	});
+
+</script>
+
+</body>
+</html>

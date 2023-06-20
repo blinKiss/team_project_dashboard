@@ -1,12 +1,9 @@
 package com.human.controller;
 
 import java.security.Principal;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,9 +15,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.team1.domain.MusicUsers;
-import com.team1.mapper.MusicUserMapper;
-import com.team1.service.MusicUserService;
+import com.human.domain.Users;
+import com.human.mapper.UserMapper;
+import com.human.service.UserService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -59,14 +56,11 @@ public class UserController {
 	}
 	
 	@PostMapping("/auth/join")
-	public String join(MusicUsers user, RedirectAttributes rttr, HttpServletRequest request) throws Exception {
+	public String join(Users user, RedirectAttributes rttr, HttpServletRequest request) throws Exception {
 		log.info("user : " + user);
 		
 		int result = userService.join(user);
-		
-		if(result > 0) {
-			HttpSession session = userService.tokenAuthenticaion(user, request);
-		}
+
 		
 		rttr.addFlashAttribute("msg", user.getName() );
 		
@@ -81,7 +75,7 @@ public class UserController {
 	
 	// 아이디 중복 확인
 	@Autowired
-	private MusicUserMapper userMapper;
+	private UserMapper userMapper;
 
 	@GetMapping("/checkUserId")
 	@ResponseBody

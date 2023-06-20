@@ -1,0 +1,96 @@
+@charset "utf-8";
+*{
+    margin: auto 0;
+    padding: 0;
+    text-align: center;
+    font-style: "맑은샘물";
+}
+header{
+    float:left;
+    min-width: 100%;
+    height:7%;
+    background-color: yellowgreen;
+}
+.join{
+    float:left;
+}
+
+.logo img{
+    float:left;
+    display:absolute;
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+}
+
+.join_wrap{
+    padding-top: 15%;
+}
+
+.joinform{
+    font-size: 40px;
+    padding-bottom: 10px;
+}
+
+.id>input,
+.pw>input,
+.pwcheck>input,
+.name>input,
+.age>input,
+.sex>input
+{
+    width: 250px;
+    font-size: 20px;
+    padding-left: 5px;
+    text-align: left;
+    color:gray;
+    margin-bottom: 5px;
+}
+
+.pwsee{
+    float:left;
+    display:absolute;
+    width: 160px;
+    font-size: 20px;
+    padding-left: 5px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 23px;
+    margin-left:37.9% ;
+}
+
+.join_button,
+.back_home{
+    float:left;
+    display:absolute;
+    width: 160px;
+    font-size: 20px;
+    padding-left: 5px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 5px;
+    margin-left:37.9% ;
+}
+
+
+.OR{
+    float:center;
+    display:80%;
+    margin-left:25%;
+    border-bottom: solid gray 1px;
+    height: 0.7em;
+    width:50%;
+    margin-bottom: 20px;
+}
+
+.OR span{
+    background-color: #ffffff;
+}
+
+.sns img{
+    float:center;
+    margin-top: 20px;
+    margin-left:3%;
+    width:70px;
+    height:70px;
+}

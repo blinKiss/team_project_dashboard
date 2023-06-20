@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+    <link href="/bin/main/static/css/income.css" type="text/css" rel="stylesheet">
+    <script src="/src/main/resources/static/javascript/jquery-1.12.3.js"></script>
+    <script src="/src/main/resources/static/javascript/script.js" defer type="text/javascript"></script>
+    <title>입력_지출</title>
+    </head>
+    <body>
+        <header>
+            <div th:replace="header.html :: header"></div> 
+        </header>
+    <div class="button_input">
+        <div class="Expense_date">
+            <a href="#">날짜</a>
+            <input type="date" id="input_date" >
+        </div>
+        <div class="regular">
+           <a href="#">할부/정기지출</a> 
+        </div>
+        <div class="Expense_amount">
+            <a href="#">금액</a> 
+            <input type="text" id="amount">
+        </div>
+        <div class="Expense_type">
+            <div class="category"><a href="#">카테고리</a>
+                <select class="submenu_1" name="" id="">
+                    <option value="">식비</option>
+                    <option value="">교통/차량</option>
+                    <option value="">문화생활</option>
+                    <option value="">마트/편의점</option>
+                    <option value="">패션/미용</option>
+                    <option value="">생활용품</option>
+                    <option value="">주거/통신</option>
+                    <option value="">건강</option>
+                    <option value="">교육</option>
+                    <option value="">경조사/회비</option>
+                    <option value="">병원비</option>
+                </select>
+            </div>
+        </div>
+        <span class="add_revise">
+            <a href="#">추가/수정</a>
+        </span>
+        <div class="Expense_type">
+            <div class="category"><a href="#">결제수단</a>
+                <select class="submenu_1" name="" id="">
+                    <option value="">은행
+                        <option value="">우리은행</option>
+                        <option value="">신한은행</option>
+                        <option value="">농협은행</option>
+                    </option>
+                    <option value="">카드
+                        <option value="">우리카드</option>
+                        <option value="">신한카드</option>
+                        <option value="">농협카드</option>
+                    </option>
+                </select>
+            </div>
+        </div>
+        <span class="add_revise">
+            <a href="#">추가/수정</a>
+        </span>
+        
+        <div class="Expense_type">
+            <div class="category"><a href="#">내용</a>
+                <div class="category_hidden"></div>
+            </div>
+            <div class="button"><a href="#">입력</a>
+                <div>
+                    <textarea name="" id="notes" cols="30" rows="10">내용을 입력해주세요
+                    </textarea> 
+                </div>
+            </div>  
+        </div>
+        <div class="">
+        </div>
+    </div>
+</head>
+</body>
+</html>

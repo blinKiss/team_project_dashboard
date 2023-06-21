@@ -4,12 +4,15 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Update;
 
+import com.human.domain.UserAuth;
 import com.human.domain.Users;
 
 @Mapper
 public interface UserMapper {
 
 	public int join(Users user) throws Exception;
+	
+	public int insertAuth(UserAuth userAuth) throws Exception;
 	
     // 아이디 중복 확인
     public int checkUserId(String userId) throws Exception;

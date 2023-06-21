@@ -6,23 +6,23 @@
 	
 	<!-- 회원 등록 -->
 	<insert id="join" parameterType="com.human.domain.Users">
-		INSERT INTO music_users ( user_no, user_id, user_pw, name, gender, age)
+		INSERT INTO users ( user_no, user_id, user_pw, name, gender, age)
 		VALUES ( SEQ_USER.nextval, #{userId}, #{userPw}, #{name}, #{gender}, #{age})
 	</insert>
 		
 	<!-- 아이디 중복 확인 -->
     <select id="checkUserId" resultType="int">
-        SELECT COUNT(*) FROM music_users WHERE user_id = #{userId}
+        SELECT COUNT(*) FROM users WHERE user_id = #{userId}
     </select>
     
     <!-- 프로필 사진 -->
 	<select id="getProfileById" resultType="int">
-	    SELECT profile FROM music_users WHERE user_id = #{userId}
+	    SELECT profile FROM users WHERE user_id = #{userId}
 	</select>
 
 	<!-- 프로필 수정 -->
 	<update id="updateProfile">
-		UPDATE music_users
+		UPDATE users
 		SET profile = #{profile}
 		WHERE user_id = #{userId}
 	</update>

@@ -55,7 +55,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter  {
 			.antMatchers("/auth/**").permitAll()
 			.antMatchers("/user/**").hasAnyRole("USER", "ADMIN")	
 			.antMatchers("/admin/**").hasRole("ADMIN")
-			.antMatchers("/css/**", "/image/**", "/js/**").permitAll()
+			.antMatchers("/css/**", "/images/**", "/js/**").permitAll()
 			
 		
 			// 아이디 중복 확인
@@ -118,10 +118,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter  {
 		// - 아이디/권한 을 조회하는 쿼리		   (인가처리)
 		// - 비밀번호 암호화방식
 		String sql1 = " SELECT user_id as username, user_pw as password, enabled "
-				    + " FROM music_users "
+				    + " FROM users "
 				    + " WHERE user_id = ? ";
 		String sql2 = " SELECT user_id as username, auth "
-					+ " FROM music_user_auth"
+					+ " FROM user_auth"
 					+ " WHERE user_id = ? ";
 		
 		auth.jdbcAuthentication()		// JDBC 방식으로 인증 (데이터베이스에 등록된 사용자 정보로 인증)

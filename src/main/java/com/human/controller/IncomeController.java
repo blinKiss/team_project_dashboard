@@ -13,6 +13,7 @@ public class IncomeController {
 
 		return "input/income";
 	}
+
 	
 //	@PostMapping
 //	public String saveIncome(@RequestParam("income") int income) {

@@ -50,13 +50,13 @@ public class UserController {
 		return "/auth/login";
 	}
 	
-	@GetMapping("/auth/join")
+	@GetMapping("/auth/signup")
 	public String joinForm() {
 		
-		return "/auth/join";
+		return "/auth/signup";
 	}
 	
-	@PostMapping("/auth/join")
+	@PostMapping("/auth/signup")
 	public String join(Users user, RedirectAttributes rttr, HttpServletRequest request) throws Exception {
 		log.info("user : " + user);
 		

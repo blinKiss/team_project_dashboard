@@ -12,6 +12,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -110,6 +112,17 @@ public class UserController {
 	    return rowsUpdated > 0;
 	}
 
+	// 네이버 로그인
+    @RequestMapping(value="/", method= RequestMethod.GET)
+    public String index() {
+        log.info("home controller");
+        return "auth/naver_login";
+    }
 
+    @RequestMapping(value="", method=RequestMethod.GET)
+    public String loginPOSTNaver(HttpSession session) {
+        log.info("callback controller");
+        return "http://localhost:5501/auth/naver_callback.html";
+    }
 
 }

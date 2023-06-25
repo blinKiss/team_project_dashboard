@@ -1,86 +1,89 @@
 @charset "utf-8";
-*{
+
+* {
     margin: auto 0;
     padding: 0;
     text-align: center;
     font-style: "맑은샘물";
 }
-header{
-    float:left;
+
+header {
+    float: left;
     min-width: 100%;
-    height:7%;
+    height: 7%;
     background-color: yellowgreen;
 }
-.logo{
-    float:left;
+
+.logo {
+    float: left;
 }
 
-.logo img{
-    float:left;
-    display:absolute;
+.logo img {
+    float: left;
+    display: absolute;
     width: 100px;
     height: 100px;
     margin-left: 20px;
 }
 
-.login_wrap{
+.login_wrap {
 
     padding-top: 25%;
 }
 
-.Welcome_back{
+.Welcome_back {
     font-size: 40px;
     padding-bottom: 10px;
 }
 
-.Email_address input{
-    width:250px;
+.Email_address input {
+    width: 250px;
     height: 30px;
     text-align: left;
     padding-left: 10px;
     font-size: 18px;
 }
 
-button{
+button {
     margin-top: 15px;
-    width:264px;
+    width: 264px;
     height: 30px;
     font-size: 18px;
     background-color: green;
-    color:white;
-    border: solid 0; 
+    color: white;
+    border: solid 0;
 }
 
-.comment{
+.comment {
     margin-top: 10px;
     text-align: center;
     margin-bottom: 10px;
 }
 
-.comment a{
+.comment a {
     text-decoration: none;
-    color:green;
+    color: green;
     font-weight: bolder;
 }
 
-.OR{
-    float:center;
-    display:50%;
-    margin-left:25%;
+.OR {
+    float: center;
+    display: 50%;
+    margin-left: 25%;
     border-bottom: solid gray 2px;
     height: 0.7em;
-    width:50%;
+    width: 50%;
     margin-bottom: 20px;
 }
 
-.OR span{
+.OR span {
     background-color: #ffffff;
 }
 
-.sns img{
-    float:center;
+.sns img {
+    float: center;
     margin-top: 20px;
-    margin-left:3%;
-    width:70px;
-    height:70px;
+    margin-left: 3%;
+    width: 70px;
+    height: 70px;
 }

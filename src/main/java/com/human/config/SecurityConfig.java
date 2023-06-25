@@ -57,12 +57,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter  {
 			.antMatchers("/admin/**").hasRole("ADMIN")
 			.antMatchers("/css/**", "/images/**", "/js/**").permitAll()
 			
-		
+			
+			// 네이버 인증
+        	.antMatchers("/auth/naver_callback").permitAll()
+        	
 			// 아이디 중복 확인
 			.antMatchers("/checkUserId").permitAll()
 			.anyRequest().authenticated()			// 요청에 대하여 인증된 사용자만 허용
 			;
-		
+
+
 		// 로그인 설정
 		http.formLogin()		
 			.loginPage("/auth/login")			// 사용자 지정 로그인 페이지 경로 (기본 경로 : /login)

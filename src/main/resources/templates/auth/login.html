@@ -1,42 +1,63 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>로그인 & 로그아웃</title>
-    <link rel="stylesheet" href="../css/login.css" type="text/css" />
-  </head>
-  <body>
-    <header>
-      <div class="logo"><img src="../images/logo.png" alt="logo" /></div>
-    </header>
-    <div class="login_wrap">
-      <div class="Welcome_back">Welcome back</div>
-      <div class="Email_address">
-        <input type="text" placeholder="Email address" />
-      </div>
-      <div><button type="submit">Continue</button></div>
-      <div class="comment">
-        Don't have an account?
-        <span><a href="#">Sign up</a></span>
-      </div>
-    </div>
-    <div class="OR"><span>OR</span></div>
-        <div class="sns">
-            <span>
-               <a href="https://google.com">
-                  <img src="/images/google.png" alt="GOOGLE">
-               </a>
-            </span>
-            <span>
-               <a href="/auth/kakao_login">
-                  <img src="/images/KAKAO.png" alt="KAKAOTALK">
-               </a>
-            </span>
-            <span>
-               <a href="/auth/naver_login"> 
-                  <img src="/images/NAVER.png" alt="NAVER">
-               </a>
-            </span>
-        </div>
-  </body>
+<head>
+<meta charset="UTF-8" />
+<title>로그인 & 로그아웃</title>
+<!-- 네이버 로그인 -->
+<script type="text/javascript"
+	src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
+	charset="utf-8"></script>
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<link rel="stylesheet" href="../css/login.css" type="text/css" />
+</head>
+<body>
+	<header>
+		<div class="logo">
+			<img src="../images/logo.png" alt="logo" />
+		</div>
+	</header>
+	<div class="login_wrap">
+		<div class="Welcome_back">Welcome back</div>
+		<div class="Email_address">
+			<input type="text" placeholder="Email address" />
+		</div>
+		<div>
+			<button type="submit">Continue</button>
+		</div>
+		<div class="comment">
+			Don't have an account? <span><a href="#">Sign up</a></span>
+		</div>
+	</div>
+	<div class="OR">
+		<span>OR</span>
+	</div>
+	<div class="sns">
+		<span> <a href="https://google.com"> <img
+				src="/images/google.png" alt="GOOGLE">
+		</a>
+		</span> <span> <a href="/auth/kakao_login"> <img
+				src="/images/KAKAO.png" alt="KAKAOTALK">
+		</a>
+		</span>
+		<div id="naver_id_login">
+			<span> <a href="/auth/naver_login"> 
+			<img src="/images/NAVER.png" alt="NAVER">
+			</a>
+			</span>
+		</div>
+	</div>
+	<!-- 네이버 로그인 -->
+	<script type="text/javascript">
+		var naver_id_login = new naver_id_login("U2wGnSpyRBivTwHQmcI7",
+				"http://localhost:5501/auth/naver_callback.html");
+		var state = naver_id_login.getUniqState();
+// 		naver_id_login.setButton("green", 2, 40);
+		naver_id_login.setDomain("YOUR_SERVICE_URL");
+		naver_id_login.setState(state);
+		//   	naver_id_login.setPopup(); // 주석하면 팝업안뜸
+		naver_id_login.init_naver_id_login();
+	</script>
+</body>
 </html>

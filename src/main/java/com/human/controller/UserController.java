@@ -113,16 +113,16 @@ public class UserController {
 	}
 
 	// 네이버 로그인
-    @RequestMapping(value="/", method= RequestMethod.GET)
-    public String index() {
-        log.info("home controller");
-        return "auth/naver_login";
-    }
-
-    @RequestMapping(value="", method=RequestMethod.GET)
-    public String loginPOSTNaver(HttpSession session) {
-        log.info("callback controller");
-        return "http://localhost:5501/auth/naver_callback.html";
-    }
+//    @RequestMapping(value="auth/naver_login", method= RequestMethod.GET)
+//    public String index() {
+//        log.info("home controller");
+//        return "auth/naver_login";
+//    }
+//
+//    @RequestMapping(value="", method=RequestMethod.GET)
+//    public String loginPOSTNaver(HttpSession session) {
+//        log.info("callback controller");
+//        return "http://localhost:5501/auth/naver_callback.html";
+//    }
 
 }

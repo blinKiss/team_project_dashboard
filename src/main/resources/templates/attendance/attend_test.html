@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>TUI Calendar</title>
+    <link
+      rel="stylesheet"
+      href="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.css"
+    />
+    <script src="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.js"></script>
+</head>
+<body>
+  <div id="calendar" style="height:800px"></div>
+
+<script>
+    var calendar = new tui.Calendar(document.getElementById('calendar'), {
+      defaultView: 'month',
+      isReadOnly: false,
+      template: {
+        monthDayname: function(dayname) {
+          return '<span class="calendar-week-dayname-name">' + dayname.label + '</span>';
+        },
+      },
+      week: {
+        showTimezoneCollapseButton: true,
+        timezonesCollapsed: false,
+      },
+      weekGutterWidth: 5,
+      schedules: [
+        {
+          id: '1',
+          calendarId: '1',
+          title: '출석체크',
+          category: 'time',
+          start: new Date(),
+          end: new Date(),
+          isReadOnly: true,
+          isPending: false,
+          attendees: [],
+          isVisible: true,
+          isPrivate: true,
+          isAllday: false,
+          isFocused: false,
+          location: '',
+          raw: {
+            class: 'public',
+          },
+        },
+      ],
+    });
+
+    calendar.on('clickDay', function(event) {
+      var clickedDate = event.date;
+      var schedule = calendar.getSchedule(clickedDate);
+      var isAttended = false;
+
+      if (schedule && schedule.length > 0) {
+        isAttended = true;
+      }
+
+      if (isAttended) {
+        calendar.deleteSchedule(schedule.id, schedule.calendarId);
+      } else {
+        var newSchedule = {
+          id: String(Date.now()),
+          calendarId: '1',
+          title: '출석체크',
+          category: 'time',
+          start: clickedDate,
+          end: clickedDate,
+          isReadOnly: true,
+          isPending: false,
+          attendees: [],
+          isVisible: true,
+          isPrivate: true,
+          isAllday: false,
+          isFocused: false,
+          location: '',
+          raw: {
+            class: 'public',
+          },
+        };
+
+        calendar.createSchedules([newSchedule]);
+      }
+
+      calendar.render();
+    });
+  </script>
+</body>
+</html>

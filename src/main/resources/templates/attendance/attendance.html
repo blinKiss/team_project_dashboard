@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<link rel="stylesheet" href="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.css" />
+<script src="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.js"></script>
+</head>
+<body>
+  <div id="calendar" style="height: 800px"></div>
+
+  <script>
+   const container = document.getElementById('calendar');
+const options = {
+  defaultView: 'week',
+  timezone: {
+    zones: [
+      {
+        timezoneName: 'Asia/Seoul',
+        displayLabel: 'Seoul',
+      },
+      {
+        timezoneName: 'Europe/London',
+        displayLabel: 'London',
+      },
+    ],
+  },
+  calendars: [
+    {
+      id: 'cal1',
+      name: '개인',
+      backgroundColor: '#03bd9e',
+    },
+    {
+      id: 'cal2',
+      name: '직장',
+      backgroundColor: '#00a9ff',
+    },
+  ],
+};
+
+const calendar = new Calendar(container, options);
+  </script>
+</body>
+</html>

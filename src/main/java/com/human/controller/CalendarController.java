@@ -1,0 +1,18 @@
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class CalendarController {
+    @Autowired
+    private CalendarService calendarService;
+
+    @PostMapping("/users/attendances")
+    @ResponseBody
+    public String saveAttendance(@RequestBody AttendanceRequest request) {
+        String date = calendarService.saveAttendance(request.getUserId());
+        return date;
+    }
+}
